@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "BH902JA28Y",
+    "m_SelectedDeviceId": "RFCT808W6KW",
     "m_SelectedPackage": {
-        "deviceId": "BH902JA28Y",
+        "deviceId": "RFCT808W6KW",
         "name": "com.com.velorexe.UnityBluetoothLowEnergy",
-        "processId": 25742,
+        "processId": 11122,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,102 @@
             "deviceId": "BH902JA28Y",
             "name": "com.com.velorexe.UnityBluetoothLowEnergy",
             "processId": 25742,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 30287,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 30689,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 31031,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 595,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 2722,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 4457,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 5449,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 6420,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 7177,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 7596,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 8015,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 8459,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 9342,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 10133,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 10685,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT808W6KW",
+            "name": "com.com.velorexe.UnityBluetoothLowEnergy",
+            "processId": 11122,
             "exited": false
         }
     ],
@@ -95,7 +191,21 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "",
-    "m_FilterIsRegularExpression": false,
-    "m_SymbolPaths": []
+    "m_FilterOptions": {
+        "m_Filter": "",
+        "m_UseRegularExpressions": false,
+        "m_MatchCase": false
+    },
+    "m_SymbolPaths": [],
+    "m_CaptureVideoSettings": {
+        "TimeLimitEnabled": false,
+        "TimeLimit": 180,
+        "VideoSizeEnabled": false,
+        "VideoSizeX": 1280,
+        "VideoSizeY": 720,
+        "BitRateEnabled": false,
+        "BitRateK": 20000,
+        "DisplayIdEnabled": false,
+        "DisplayId": ""
+    }
 }
