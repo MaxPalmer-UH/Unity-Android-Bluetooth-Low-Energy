@@ -1,5 +1,4 @@
 ﻿using Android.BLE;
-using Android.BLE.Commands;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +12,8 @@ public class DeviceButton : MonoBehaviour
     private Text _deviceUuidText;
     [SerializeField]
     private Text _deviceNameText;
+    [SerializeField]
+    private Text _deviceRssiText;
 
     [SerializeField]
     private Image _deviceButtonImage;
@@ -25,44 +26,39 @@ public class DeviceButton : MonoBehaviour
 
     private bool _isConnected = false;
 
-    private ConnectToDevice _connectCommand;
-    private ReadFromCharacteristic _readFromCharacteristic;
+    private BleDevice _bleDevice;
 
-    public void Show(string uuid, string name)
+    private float _rssiTimer = 0f;
+
+    public void Show(BleDevice device)
     {
         _deviceButtonText.text = "Connect";
 
-        _deviceUuid = uuid;
-        _deviceName = name;
+        _deviceUuid = device.MacAddress;
+        _deviceName = device.Name;
 
-        _deviceUuidText.text = uuid;
-        _deviceNameText.text = name;
+        _deviceUuidText.text = device.MacAddress;
+        _deviceNameText.text = device.Name;
+
+        _bleDevice = device;
+    }
+
+    public void Update()
+    {
+        _rssiTimer += Time.deltaTime;
+        if (_rssiTimer > 0.5f)
+        {
+            _rssiTimer = 0f;
+            _bleDevice.GetRssi((_, rsi) => _deviceRssiText.text = rsi + " dBm");
+        }
     }
 
     public void Connect()
     {
-        if (!_isConnected)
-        {
-            _connectCommand = new ConnectToDevice(_deviceUuid, OnConnected, OnDisconnected);
-            BleManager.Instance.QueueCommand(_connectCommand);
-        }
-        else
-        {
-            _connectCommand.Disconnect();
-        }
+        _bleDevice.Connect(OnConnected, OnDisconnected);
     }
 
-    public void SubscribeToExampleService()
-    {
-        //Replace these Characteristics with YOUR device's characteristics
-        _readFromCharacteristic = new ReadFromCharacteristic(_deviceUuid, "180c", "2a56", (byte[] value) =>
-        {
-            Debug.Log(Encoding.UTF8.GetString(value));
-        });
-        BleManager.Instance.QueueCommand(_readFromCharacteristic);
-    }
-
-    private void OnConnected(string deviceUuid)
+    private void OnConnected(BleDevice device)
     {
         _previousColor = _deviceButtonImage.color;
         _deviceButtonImage.color = _onConnectedColor;
@@ -70,10 +66,13 @@ public class DeviceButton : MonoBehaviour
         _isConnected = true;
         _deviceButtonText.text = "Disconnect";
 
-        SubscribeToExampleService();
+        device.GetCharacteristic("180C", "2A56").Subscribe((value) =>
+        {
+            Debug.Log(Encoding.UTF8.GetString(value));
+        });
     }
 
-    private void OnDisconnected(string deviceUuid)
+    private void OnDisconnected(BleDevice device)
     {
         _deviceButtonImage.color = _previousColor;
 
