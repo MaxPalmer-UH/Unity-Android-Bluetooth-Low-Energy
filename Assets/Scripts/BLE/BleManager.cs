@@ -152,7 +152,7 @@ namespace Android.BLE
             List<object> parameters = new List<object> { id };
             parameters.AddRange(task.Parameters);
 
-            //Debug.Log("Queueing task with ID: " + id);
+            Debug.Log("Queueing task with ID: " + id);
 
             _callbackNotifiers.Add(id, new TaskDescription(receiver, runsContiniously));
             _javaBleManager.Call(task.MethodDefinition, parameters.ToArray());

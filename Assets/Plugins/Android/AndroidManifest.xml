@@ -13,6 +13,7 @@
 		</activity>
 	</application>
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
 	<uses-permission android:name="android.permission.BLUETOOTH"/>
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
@@ -24,5 +25,11 @@
     <!--bibo01 : hardware option-->
     <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+=======
+	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+>>>>>>> 811b3250846cd767f778487e5dec259dcc6cdd03
 
 </manifest>

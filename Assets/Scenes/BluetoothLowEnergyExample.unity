@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 504503911}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2256,6 +2256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f45747c93929184ca4b9090c4c83f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _logBleMessages: 0
 --- !u!1 &1985308836
 GameObject:
@@ -2347,6 +2348,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985308836}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> 811b3250846cd767f778487e5dec259dcc6cdd03
 --- !u!1 &2015063611
 GameObject:
   m_ObjectHideFlags: 0
