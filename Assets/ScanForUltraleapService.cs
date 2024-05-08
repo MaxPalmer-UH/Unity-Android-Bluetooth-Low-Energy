@@ -58,11 +58,10 @@ public class ScanForUltraleapService : MonoBehaviour
 
         //if (device.Name == "Ultraleap")
         try
-        {
-            Debug.Log($">>>>>>>>>>>>>> Found {device.Name} - connecting");
-
+        {;
             if (device.Name == "ULBLE")
             {
+                Debug.Log($">>>>>>>>>>>>>> Found {device.Name} - connecting");
                 device.Connect(OnDeviceConnected, OnDeviceDisconnected);
             }
         }
@@ -115,8 +114,8 @@ public class ScanForUltraleapService : MonoBehaviour
                             try
                             {
                                 Debug.Log($"Calling SearchForDevicesWithFilter");
-                                BleManager.Instance.SearchForDevices(30 * 1000, OnDeviceFound);
-                                //BleManager.Instance.SearchForDevicesWithFilter(60 * 1000, OnDeviceFound, TargetMACAddress);
+                                //BleManager.Instance.SearchForDevices(30 * 1000, OnDeviceFound);
+                                BleManager.Instance.SearchForDevicesWithFilter(60 * 1000, OnDeviceFound, TargetMACAddress);
                             }
                             catch (Exception e)
                             {

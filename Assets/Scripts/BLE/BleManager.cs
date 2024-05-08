@@ -110,6 +110,7 @@ namespace Android.BLE
             _onDeviceFound = onDeviceFound;
             BleTask task = new BleTask("searchForBleDevices", scanPeriod);
 
+            Debug.LogWarning("Sending searchForBleDevices");
             SendTask(task, this, runsContiniously: true);
         }
 
@@ -155,6 +156,8 @@ namespace Android.BLE
             Debug.Log("Queueing task with ID: " + id);
 
             _callbackNotifiers.Add(id, new TaskDescription(receiver, runsContiniously));
+
+            Debug.LogWarning($"In SendTask, about to call _javaBleManager.Call with {task.MethodDefinition} : {parameters.ToArray()}");
             _javaBleManager.Call(task.MethodDefinition, parameters.ToArray());
 
             return id;
@@ -185,6 +188,10 @@ namespace Android.BLE
                 Debug.LogError(
                     $"No OnBleMessage with ID {msg.ID} is in the BleManager's stack.");
                 return;
+            }
+            else
+            {
+                Debug.LogWarning($"Recevied Ble Message: {msg.Name} {msg.ID} {msg.Device} {msg.ErrorMessage}");
             }
 
             // Executes the function tied to the ID
